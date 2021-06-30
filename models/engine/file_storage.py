@@ -4,7 +4,6 @@ import json
 from models.base_model import BaseModel
 
 
-
 class FileStorage():
     """Private class"""
     __file_path = 'file.json'
