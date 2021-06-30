@@ -4,7 +4,7 @@
 
 from datetime import datetime
 import uuid
-import models
+"""import models"""
 
 de_ini = "%Y-%m-%dT%H:%M:%S.%f"
 
@@ -30,7 +30,10 @@ class BaseModel:
     def __str__(self):
         """str"""
         return "[{}] ({}) {}".format(str(type(self).__name__), self.id,
-                                     str(self.__dict__)
+                                     str(self.__dict__))
+
+    def save(self):
+        self.updated_at = datetime.now()
 
     def to_dict(self):
         """dict"""
