@@ -3,7 +3,6 @@ from models import *
 
 
 class User(BaseModel):
-"""user class"""
     email = ""
     password = ""
     first_name = ""
