@@ -30,8 +30,8 @@ class BaseModel:
 
     def __str__(self):
         """str"""
-        return "[{}] ({}) {}".format(str(type(self).__name__), self.id,
-                                     str(self.__dict__))
+        return "[{}] ({}) {}".format(self.__class__.__name__, self.id,
+                                     self.__dict__)
 
     def save(self):
         """save"""
@@ -40,8 +40,8 @@ class BaseModel:
 
     def to_dict(self):
         """dict"""
-        d = dict(**self.__dict__)
-        d['class'] = str(type(self).__name__)
+        d = dict(self.__dict__)
+        d['__class__'] = self.__class__.__name__
         d['created_at'] = self.created_at.isoformat()
         d['updated_at'] = self.updated_at.isoformat()
         return d
