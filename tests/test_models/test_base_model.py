@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module for test BaseModel class"""
+"""Test for base_model"""
 import unittest
 import json
 import pep8
@@ -116,7 +116,7 @@ class TestBaseModel(unittest.TestCase):
         self.assertIsNot(obj, obj2)
 
     def test_file_save(self):
-        """Test that info is saved to file"""
+        """Test info is saved to file"""
         b3 = BaseModel()
         b3.save()
         with open("file.json", 'r') as f:
